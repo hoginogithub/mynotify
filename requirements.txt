@@ -1,4 +1,0 @@
-click==7.1
-pip==21.0
-plyer==2.0
-setuptools==49.2
