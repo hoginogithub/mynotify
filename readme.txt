@@ -10,9 +10,10 @@
 ・エディタでrequirements.txtを作成
 ・requirements.lockを作成
 　pip freeze > requirements.lock
-
 ・仮想環境のpython.exe
 　C:\Users\hogin\Documents\prog\python\windowsapp\notification2\venv\Scripts\python.exe
+・github
+  https://github.com/hoginogithub/notification.git
 
 2021.03.07
 ・windows exeファイルを作ろうとしたけど、
