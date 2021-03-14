@@ -1,12 +1,15 @@
 import click
 from plyer import notification
-import sys
-import argparse
 import time
 
 @click.command()
-def cli():
-    my_notify()
+@click.option('-t2150', is_flag=True)
+@click.option('-t2200', is_flag=True)
+@click.option('-timeout', type=int, default=5)
+@click.option('-title', type=str, default='(non title)')
+@click.option('-msg', type=str, default='(no message)')
+def cli(t2150, t2200, timeout, title, msg):
+    mynotify(t2150, t2200, timeout, title, msg)
 
 def notify_2150(in_timeout=60):
     notification.notify(
@@ -29,21 +32,11 @@ def notify_msg(in_title="", in_msg="", in_timeout=60):
         timeout = in_timeout
     )
 
-def my_notify():
-    parser = argparse.ArgumentParser(description="Windows Notify Program")
-    parser.add_argument("-t2150", action="store_true", help="21:50 PC shutdown notice.")
-    parser.add_argument("-t2200", action="store_true", help="22:00 PC shutdown notice.")
-    parser.add_argument("-title", type=str, default="(no title)", help="Windows notification title.")
-    parser.add_argument("-msg", type=str, default="(no message)", help="Windows notification message.")
-    parser.add_argument("-timeout", type=int, default=10, help="Windows notification timeout.")
+def mynotify(t2150=False, t2200=False, timeout=10, title='(no title)', msg='(no message)'):
 
-    args = parser.parse_args()
-
-    if args.t2150:
-        notify_2150(in_timeout=args.timeout)
-    elif args.t2200:
-        notify_2200(in_timeout=args.timeout)
+    if t2150:
+        notify_2150(in_timeout=timeout)
+    elif t2200:
+        notify_2200(in_timeout=timeout)
     else:
-        notify_msg(in_title=args.title, in_msg=args.msg, in_timeout=args.timeout)
-
-    sys.exit(0)
+        notify_msg(in_title=title, in_msg=msg, in_timeout=timeout)
