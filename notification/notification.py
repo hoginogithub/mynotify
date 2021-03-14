@@ -1,8 +1,12 @@
+import click
 from plyer import notification
 import sys
 import argparse
-
 import time
+
+@click.command()
+def cli():
+    notification()
 
 def notify_2150(in_timeout=60):
     notification.notify(
@@ -25,7 +29,7 @@ def notify_msg(in_title="", in_msg="", in_timeout=60):
         timeout = in_timeout
     )
 
-if __name__ == "__main__":
+def notification():
     parser = argparse.ArgumentParser(description="Windows Notify Program")
     parser.add_argument("-t2150", action="store_true", help="21:50 PC shutdown notice.")
     parser.add_argument("-t2200", action="store_true", help="22:00 PC shutdown notice.")
