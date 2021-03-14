@@ -6,7 +6,7 @@ import time
 
 @click.command()
 def cli():
-    notification()
+    my_notify()
 
 def notify_2150(in_timeout=60):
     notification.notify(
@@ -29,19 +29,15 @@ def notify_msg(in_title="", in_msg="", in_timeout=60):
         timeout = in_timeout
     )
 
-def notification():
+def my_notify():
     parser = argparse.ArgumentParser(description="Windows Notify Program")
     parser.add_argument("-t2150", action="store_true", help="21:50 PC shutdown notice.")
     parser.add_argument("-t2200", action="store_true", help="22:00 PC shutdown notice.")
     parser.add_argument("-title", type=str, default="(no title)", help="Windows notification title.")
     parser.add_argument("-msg", type=str, default="(no message)", help="Windows notification message.")
-    parser.add_argument("-timeout", type=int, default=30, help="Windows notification timeout.")
+    parser.add_argument("-timeout", type=int, default=10, help="Windows notification timeout.")
 
     args = parser.parse_args()
-
-    #debug
-    #print(f'SYSTEM PLATFORM: {sys.platform}')
-    #time.sleep(10)
 
     if args.t2150:
         notify_2150(in_timeout=args.timeout)
