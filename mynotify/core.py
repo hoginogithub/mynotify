@@ -5,7 +5,7 @@ import time
 @click.command()
 @click.option('-t2150', is_flag=True)
 @click.option('-t2200', is_flag=True)
-@click.option('-timeout', type=int, default=5)
+@click.option('-timeout', type=int, default=15)
 @click.option('-title', type=str, default='(non title)')
 @click.option('-msg', type=str, default='(no message)')
 def cli(t2150, t2200, timeout, title, msg):
