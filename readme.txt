@@ -17,6 +17,8 @@
 ・circlci
   githubのアカウントを使用
   https://app.circleci.com/projects/project-setup/github/hoginogithub/notification
+・setup.pyを作成して実行
+　pip install -e .
 
 2021.03.07
 ・windows exeファイルを作ろうとしたけど、
