@@ -13,7 +13,7 @@
 ・仮想環境のpython.exe
 　C:\Users\hogin\Documents\prog\python\windowsapp\notification2\venv\Scripts\python.exe
 ・github
-  https://github.com/hoginogithub/notification.git
+  https://github.com/hoginogithub/mynotify.git
 ・circlci
   githubのアカウントを使用
   https://app.circleci.com/projects/project-setup/github/hoginogithub/notification
